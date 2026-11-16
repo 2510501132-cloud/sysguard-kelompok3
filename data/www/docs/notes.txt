@@ -1,0 +1,2 @@
+Catatan simulasi SysGuard.
+Berkas ini hanya data contoh untuk praktikum Sistem Operasi.

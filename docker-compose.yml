@@ -1,0 +1,57 @@
+# SysGuard -- Pilihan A. Dua container; skrip orkestrasi berjalan di HOST.
+name: sysguard
+
+services:
+  web:                       # layanan yang dimonitor
+    build: ./docker/web
+    image: sysguard-web:1.0
+    container_name: sysguard-web
+    ports: ["127.0.0.1:8080:8080"]
+    volumes:
+      - ./data/www:/usr/share/nginx/html:ro      # bind mount = sumber data backup
+    networks:
+      sysguard-net: { ipv4_address: 172.28.0.10 }
+    cpus: 0.50                # resource limit CPU
+    mem_limit: 128m           # resource limit memori
+    memswap_limit: 128m
+    pids_limit: 100
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    restart: unless-stopped
+
+  backup-store:              # tujuan backup, diakses via SSH/SCP
+    build: ./docker/backup-store
+    image: sysguard-store:1.0
+    container_name: sysguard-store
+    ports: ["127.0.0.1:2222:22"]
+    volumes:
+      - backup_data:/backups                      # volume = persistensi backup
+      - ssh_hostkeys:/etc/ssh/hostkeys            # host key tetap saat container dibuat ulang
+      - ./secrets/sysguard_backup.pub:/run/keys/backup.pub:ro
+    networks:
+      sysguard-net: { ipv4_address: 172.28.0.20 }
+    cpus: 0.50
+    mem_limit: 64m
+    memswap_limit: 64m
+    pids_limit: 50
+    cap_drop: [ALL]
+    cap_add: [CHOWN, SETUID, SETGID, SYS_CHROOT, KILL]   # minimum untuk sshd privilege separation
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+
+networks:
+  sysguard-net:
+    driver: bridge
+    ipam:
+      config: [{ subnet: 172.28.0.0/24 }]
+
+volumes:
+  backup_data:
+  ssh_hostkeys:

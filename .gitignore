@@ -1,0 +1,4 @@
+secrets/
+var/
+config/sysguard.conf
+*.zip

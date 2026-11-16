@@ -1,0 +1,15 @@
+# Salin menjadi config/sysguard.conf. Tanpa rahasia. Variabel environment mengalahkan file ini.
+STORE_MODE=ssh                      # ssh (utama) | local (dev tanpa Docker)
+SSH_HOST=127.0.0.1
+SSH_PORT=2222
+SSH_USER=backup
+SSH_KEY=secrets/sysguard_backup
+KNOWN_HOSTS=secrets/known_hosts
+REMOTE_DIR=/backups/sysguard
+SOURCE_DIR=data/www                 # harus di bawah <repo>/data/
+SERVICE_URL=http://127.0.0.1:8080/
+SERVICE_CONTAINER=sysguard-web
+STORE_CONTAINER=sysguard-store
+CHECK_CONTAINER=auto                # yes | no | auto
+MAX_DISK_PCT=90                     # tolak backup bila disk store >= nilai ini
+MIN_FREE_FACTOR=2                   # ruang kosong minimal = ukuran sumber x faktor

@@ -184,3 +184,16 @@ scripts/        sysguard.sh monitor.sh backup.sh restore.sh setup-ssh.sh lib/com
 docker/         web/ (nginx) backup-store/ (sshd)
 docker-compose.yml  config/  data/www/ (data simulasi)  docs/  evidence/
 ```
+
+## Kontribusi Anggota
+
+| Anggota | NIM | Kontribusi |
+|---|---|---|
+| Andra Bimo Wiguna | 2510501132 | Koordinasi repository dan versi final (Git, tag, ZIP); integrasi antar modul; README |
+| Muhammad Sami | 2510501127 | Modul Monitoring: `scripts/monitor.sh` dan `scripts/lib/common.sh` |
+| Diandra Satrio Nugroho | 2510501123 | Modul Backup dan Restore: `scripts/backup.sh` dan `scripts/restore.sh` |
+| Muhammad Fikri Riswaluyo | 2510501117 | Akses aman: `scripts/setup-ssh.sh`, `sshd_config`, ownership dan permission |
+| Divo Dimas Saputra | 2510501110 | Container: Dockerfile, `docker-compose.yml`, volume, network, resource limit |
+
+Pengujian (`scripts/tests/run-tests.sh`), bukti di `evidence/`, laporan, dan slide dikerjakan bersama.
+Setiap anggota memahami kedua modul dan dapat menjelaskan kontribusinya.

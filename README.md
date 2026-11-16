@@ -2,11 +2,17 @@
 
 Proyek Akhir Praktikum Sistem Operasi: Otomasi dan Container Linux.
 
-> **Nama kelompok / kelas:** _isi_  
-> **Anggota (nama, NIM):** _isi_
+**Nama kelompok / kelas:** Kelompok 3 / Kelas D
+
+**Anggota (nama, NIM):**
+
+- Andra Bimo Wiguna (2510501132)
+- Muhammad Sami (2510501127)
+- Diandra Satrio Nugroho (2510501123)
+- Muhammad Fikri Riswaluyo (2510501117)
+- Divo Dimas Saputra (2510501110)
 
 ## 1. Tujuan
-
 SysGuard memastikan sebuah layanan web tetap sehat dan datanya dapat dipulihkan.
 Dua modul saling terhubung:
 

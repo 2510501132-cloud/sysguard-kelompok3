@@ -166,16 +166,17 @@ docker image rm sysguard-web:1.0 sysguard-store:1.0
 - Checksum mendeteksi perubahan/kerusakan, bukan pelaku. Pembandingnya disimpan di host (`var/state`); jika direktori itu hilang, verifikasi memakai checksum dari store saja (dicatat sebagai WARN).
 - Pengguna `backup` dapat menjalankan perintah shell di container store (dibutuhkan untuk `df`/verifikasi); belum dibatasi `ForceCommand`.
 - Mode `STORE_MODE=local` hanya untuk pengembangan tanpa Docker; bukan untuk bukti pengujian.
-- Konfigurasi `cap_add` untuk sshd dan `read_only` pada nginx perlu dikonfirmasi pada lingkungan masing-masing (lihat log `docker compose logs` bila container gagal naik).
+- `backup-store` memerlukan capability tambahan `DAC_OVERRIDE` dan `FOWNER` (selain CHOWN, SETUID, SETGID, SYS_CHROOT, KILL) agar entrypoint dapat menyiapkan `~/.ssh` milik user backup; container tetap tanpa `privileged`.
 
 ## 12. Kontribusi anggota
 
 | Anggota | NIM | Komponen yang dikerjakan | Bukti (commit/berkas) |
 |---|---|---|---|
-| _isi_ | _isi_ | _mis. monitor.sh + uji M-xx_ | _isi_ |
-| _isi_ | _isi_ | _mis. backup.sh/restore.sh + uji B/R/I_ | _isi_ |
-| _isi_ | _isi_ | _mis. Docker/compose + SSH + uji S/C_ | _isi_ |
-| _isi_ | _isi_ | _mis. laporan, slide, evidence_ | _isi_ |
+| Andra Bimo Wiguna | 2510501132 | Repository dan Git, orkestrasi `sysguard.sh`, README, menjalankan tes; perbaikan kompatibilitas Linux (`common.sh`, `backup.sh`, `docker-compose.yml`) | commit a3e5870, `evidence/hasil-uji.md`, `evidence/logs/run-tests.log` |
+| Muhammad Sami | 2510501127 | Modul Monitoring: `scripts/monitor.sh`, `scripts/lib/common.sh` | uji M-01..M-04 (`evidence/logs/M-*.log`) |
+| Diandra Satrio Nugroho | 2510501123 | Modul Backup dan Restore: `scripts/backup.sh`, `scripts/restore.sh` | uji B-01..B-04, R-01..R-03, I-01 (`evidence/logs/`) |
+| Muhammad Fikri Riswaluyo | 2510501117 | Akses aman: `scripts/setup-ssh.sh`, `docker/backup-store/sshd_config` | uji S-01..S-05 (`evidence/logs/S-*.log`) |
+| Divo Dimas Saputra | 2510501110 | Container: Dockerfile, `docker-compose.yml`, volume, network, resource limit | uji C-01..C-04 (`evidence/logs/C-*.log`) |
 
 ## 13. Struktur repository
 
@@ -184,16 +185,3 @@ scripts/        sysguard.sh monitor.sh backup.sh restore.sh setup-ssh.sh lib/com
 docker/         web/ (nginx) backup-store/ (sshd)
 docker-compose.yml  config/  data/www/ (data simulasi)  docs/  evidence/
 ```
-
-## Kontribusi Anggota
-
-| Anggota | NIM | Kontribusi |
-|---|---|---|
-| Andra Bimo Wiguna | 2510501132 | Koordinasi repository dan versi final (Git, tag, ZIP); integrasi antar modul; README |
-| Muhammad Sami | 2510501127 | Modul Monitoring: `scripts/monitor.sh` dan `scripts/lib/common.sh` |
-| Diandra Satrio Nugroho | 2510501123 | Modul Backup dan Restore: `scripts/backup.sh` dan `scripts/restore.sh` |
-| Muhammad Fikri Riswaluyo | 2510501117 | Akses aman: `scripts/setup-ssh.sh`, `sshd_config`, ownership dan permission |
-| Divo Dimas Saputra | 2510501110 | Container: Dockerfile, `docker-compose.yml`, volume, network, resource limit |
-
-Pengujian (`scripts/tests/run-tests.sh`), bukti di `evidence/`, laporan, dan slide dikerjakan bersama.
-Setiap anggota memahami kedua modul dan dapat menjelaskan kontribusinya.

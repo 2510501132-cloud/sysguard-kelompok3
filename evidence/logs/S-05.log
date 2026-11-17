@@ -1,0 +1,8 @@
+# S-05 -- Akses aman
+# Permission file backup di store
+$ perm_test
+store : 600 backup:backup /backups/sysguard/backup-20261117-054316.tar.gz
+755 backup:backup /backups/sysguard
+host  : 700 bimoserver /home/bimoserver/sysguard-kelompok3/var/state
+600 bimoserver /home/bimoserver/sysguard-kelompok3/var/state/backup-20261117-054316.tar.gz.sha256
+[exit status = 0]

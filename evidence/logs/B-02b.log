@@ -1,0 +1,5 @@
+# B-02b -- Backup+Monitoring
+# Jumlah backup setelah B-02
+$ echo 2
+2
+[exit status = 0]

@@ -1,0 +1,15 @@
+# R-02 -- Restore
+# Archive di store dirusak (1 byte ditambahkan)
+$ corrupt_test
+2026-11-17 05:43:12 [INFO] [backup] preflight: menjalankan monitor.sh
+2026-11-17 05:43:12 [INFO] [monitor] container sysguard-web running (health=starting)
+2026-11-17 05:43:12 [INFO] [monitor] layanan http://127.0.0.1:8080/ sehat (HTTP 200)
+2026-11-17 05:43:12 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113824KB, dibutuhkan>=56KB
+2026-11-17 05:43:12 [INFO] [monitor] monitoring: semua pemeriksaan LULUS
+2026-11-17 05:43:12 [INFO] [backup] preflight lulus -- backup dilanjutkan
+2026-11-17 05:43:12 [INFO] [backup] membuat arsip backup-20261117-054312 dari /home/bimoserver/sysguard-kelompok3/data/www
+2026-11-17 05:43:12 [INFO] [backup] arsip dibuat: 4 file, 4KB
+2026-11-17 05:43:13 [INFO] [backup] BACKUP BERHASIL: backup-20261117-054312 (4 file) tersimpan & terverifikasi di store
+2026-11-17 05:43:13 [INFO] [restore] mengambil backup-20261117-054312 dari store
+2026-11-17 05:43:14 [ERROR] [restore] CHECKSUM ARCHIVE TIDAK COCOK -- archive berubah/rusak, restore dibatalkan
+[exit status = 30]

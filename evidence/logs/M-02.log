@@ -1,0 +1,7 @@
+# M-02 -- Monitoring
+# Layanan dihentikan
+$ while_service_down /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh monitor
+2026-11-17 05:42:59 [ERROR] [monitor] container sysguard-web TIDAK berjalan
+2026-11-17 05:43:00 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113964KB, dibutuhkan>=56KB
+SERVICE=FAIL STORAGE=OK
+[exit status = 10]

@@ -1,0 +1,24 @@
+[PASS] M-01 exit=0
+[PASS] M-02 exit=10
+[PASS] M-03 exit=11
+[PASS] M-04 exit=2
+[PASS] B-01 exit=0
+[PASS] B-02 exit=20
+[PASS] B-02b exit=0
+[PASS] B-03 exit=20
+[PASS] B-04 exit=32
+[PASS] R-01 exit=0
+[PASS] R-02 exit=30
+[PASS] R-03 exit=2
+[PASS] I-01 exit=0
+[PASS] S-01 exit=0
+[PASS] S-02 exit=255
+[PASS] S-03 exit=255
+[PASS] S-04 exit=255
+[PASS] S-05 exit=0
+[PASS] C-01 exit=0
+[PASS] C-02 exit=0
+[PASS] C-03 exit=0
+[PASS] C-04 exit=0
+
+RINGKASAN: PASS=22 FAIL=0 SKIP=0  (tabel: evidence/hasil-uji.md)

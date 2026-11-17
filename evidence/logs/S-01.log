@@ -1,0 +1,5 @@
+# S-01 -- Akses aman
+# SSH dengan key yang diizinkan
+$ store_exec echo akses-ok
+akses-ok
+[exit status = 0]

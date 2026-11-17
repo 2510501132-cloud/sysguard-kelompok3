@@ -42,7 +42,7 @@ services:
     memswap_limit: 64m
     pids_limit: 50
     cap_drop: [ALL]
-    cap_add: [CHOWN, SETUID, SETGID, SYS_CHROOT, KILL]   # minimum untuk sshd privilege separation
+    cap_add: [CHOWN, SETUID, SETGID, SYS_CHROOT, KILL, DAC_OVERRIDE, FOWNER]   # minimum untuk sshd privilege separation
     security_opt: ["no-new-privileges:true"]
     restart: unless-stopped
 

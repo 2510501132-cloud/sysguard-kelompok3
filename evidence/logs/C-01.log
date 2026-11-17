@@ -1,0 +1,8 @@
+# C-01 -- Container
+# Batas CPU/memori diterapkan
+$ limits_test
+/sysguard-web NanoCpus=500000000 Memory=134217728 PidsLimit=100
+/sysguard-store NanoCpus=500000000 Memory=67108864 PidsLimit=50
+sysguard-web CPU=0.00% MEM=3.227MiB / 128MiB PIDS=3
+sysguard-store CPU=0.00% MEM=1.406MiB / 64MiB PIDS=1
+[exit status = 0]

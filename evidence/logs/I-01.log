@@ -1,0 +1,21 @@
+# I-01 -- Integrasi
+# Monitoring->backup->hapus data->restore --apply->bandingkan isi
+$ integration_test
+2026-11-17 05:43:15 [INFO] [backup] preflight: menjalankan monitor.sh
+2026-11-17 05:43:15 [INFO] [monitor] container sysguard-web running (health=starting)
+2026-11-17 05:43:15 [INFO] [monitor] layanan http://127.0.0.1:8080/ sehat (HTTP 200)
+2026-11-17 05:43:16 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113788KB, dibutuhkan>=56KB
+2026-11-17 05:43:16 [INFO] [monitor] monitoring: semua pemeriksaan LULUS
+2026-11-17 05:43:16 [INFO] [backup] preflight lulus -- backup dilanjutkan
+2026-11-17 05:43:16 [INFO] [backup] membuat arsip backup-20261117-054316 dari /home/bimoserver/sysguard-kelompok3/data/www
+2026-11-17 05:43:16 [INFO] [backup] arsip dibuat: 4 file, 4KB
+2026-11-17 05:43:17 [INFO] [backup] BACKUP BERHASIL: backup-20261117-054316 (4 file) tersimpan & terverifikasi di store
+[info] berkas sumber dihapus (simulasi kehilangan data)
+2026-11-17 05:43:17 [INFO] [restore] mengambil backup-20261117-054316 dari store
+2026-11-17 05:43:18 [INFO] [restore] checksum archive cocok
+2026-11-17 05:43:18 [INFO] [restore] RESTORE TERVERIFIKASI: 4 file cocok dengan manifest (/home/bimoserver/sysguard-kelompok3/var/restore/backup-20261117-054316)
+2026-11-17 05:43:18 [INFO] [restore] salinan rollback: /home/bimoserver/sysguard-kelompok3/var/rollback/pre-restore-20261117-054318
+2026-11-17 05:43:18 [INFO] [restore] hasil restore diterapkan ke /home/bimoserver/sysguard-kelompok3/data/www
+RESTORE_VERIFIED name=backup-20261117-054316 files=4 dest=/home/bimoserver/sysguard-kelompok3/var/restore/backup-20261117-054316
+INTEGRASI OK: berkas pulih, isi identik
+[exit status = 0]

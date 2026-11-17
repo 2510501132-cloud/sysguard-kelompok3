@@ -1,0 +1,5 @@
+# S-02 -- Akses aman
+# SSH dengan key yang TIDAK terdaftar
+$ intruder
+backup@127.0.0.1: Permission denied (publickey).
+[exit status = 255]

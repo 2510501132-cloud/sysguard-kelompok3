@@ -1,0 +1,9 @@
+# B-02 -- Backup+Monitoring
+# Backup saat layanan mati
+$ while_service_down /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh backup
+2026-11-17 05:43:06 [INFO] [backup] preflight: menjalankan monitor.sh
+2026-11-17 05:43:06 [ERROR] [monitor] container sysguard-web TIDAK berjalan
+2026-11-17 05:43:06 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113896KB, dibutuhkan>=56KB
+SERVICE=FAIL STORAGE=OK
+2026-11-17 05:43:06 [ERROR] [backup] BACKUP DITOLAK: preflight monitoring gagal (kode 10)
+[exit status = 20]

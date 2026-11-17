@@ -1,0 +1,9 @@
+# M-01 -- Monitoring
+# Layanan hidup, disk store di bawah batas
+$ /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh monitor
+2026-11-17 05:42:58 [INFO] [monitor] container sysguard-web running (health=healthy)
+2026-11-17 05:42:58 [INFO] [monitor] layanan http://127.0.0.1:8080/ sehat (HTTP 200)
+2026-11-17 05:42:59 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113972KB, dibutuhkan>=56KB
+SERVICE=OK STORAGE=OK
+2026-11-17 05:42:59 [INFO] [monitor] monitoring: semua pemeriksaan LULUS
+[exit status = 0]

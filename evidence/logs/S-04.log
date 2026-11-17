@@ -1,0 +1,5 @@
+# S-04 -- Akses aman
+# Login sebagai root
+$ rootlogin
+root@127.0.0.1: Permission denied (publickey).
+[exit status = 255]

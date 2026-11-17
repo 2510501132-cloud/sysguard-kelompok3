@@ -1,0 +1,46 @@
+# C-04 -- Monitoring container
+# Snapshot docker stats + log container
+$ /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh monitor --stats
+===== 2026-11-17 05:43:25 docker stats =====
+NAME             CPU %     MEM USAGE / LIMIT   MEM %     PIDS
+sysguard-web     4.62%     3.195MiB / 128MiB   2.50%     3
+sysguard-store   0.00%     1.312MiB / 64MiB    2.05%     1
+----- docker logs --tail 15 sysguard-web -----
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2026/11/17 05:43:07 [notice] 1#1: using the "epoll" event method
+2026/11/17 05:43:07 [notice] 1#1: nginx/1.27.5
+2026/11/17 05:43:07 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2026/11/17 05:43:07 [notice] 1#1: OS: Linux 7.0.0-30-generic
+2026/11/17 05:43:07 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+2026/11/17 05:43:07 [notice] 1#1: start worker processes
+2026/11/17 05:43:07 [notice] 1#1: start worker process 21
+2026/11/17 05:43:07 [notice] 1#1: start worker process 22
+172.28.0.1 - - [17/Nov/2026:05:43:08 +0000] "GET / HTTP/1.1" 200 189 "-" "curl/8.18.0" "-"
+172.28.0.1 - - [17/Nov/2026:05:43:09 +0000] "GET / HTTP/1.1" 200 189 "-" "curl/8.18.0" "-"
+172.28.0.1 - - [17/Nov/2026:05:43:12 +0000] "GET / HTTP/1.1" 200 189 "-" "curl/8.18.0" "-"
+172.28.0.1 - - [17/Nov/2026:05:43:15 +0000] "GET / HTTP/1.1" 200 189 "-" "curl/8.18.0" "-"
+127.0.0.1 - - [17/Nov/2026:05:43:17 +0000] "GET / HTTP/1.1" 200 189 "-" "Wget" "-"
+127.0.0.1 - - [17/Nov/2026:05:43:27 +0000] "GET / HTTP/1.1" 200 189 "-" "Wget" "-"
+----- docker logs --tail 15 sysguard-store -----
+Accepted key ED25519 SHA256:aI+3MA99qIrEEYeVV8z7gQIGX4tdEt40IUFbr1IdPOc found at /home/backup/.ssh/authorized_keys:1
+Accepted publickey for backup from 172.28.0.1 port 33222 ssh2: ED25519 SHA256:aI+3MA99qIrEEYeVV8z7gQIGX4tdEt40IUFbr1IdPOc
+User child is on pid 28
+Starting session: subsystem 'sftp' for backup from 172.28.0.1 port 33222 id 0
+Received disconnect from 172.28.0.1 port 33222:11: disconnected by user
+Disconnected from user backup 172.28.0.1 port 33222
+Connection from 172.28.0.1 port 33224 on 172.28.0.20 port 22 rdomain ""
+Accepted key ED25519 SHA256:aI+3MA99qIrEEYeVV8z7gQIGX4tdEt40IUFbr1IdPOc found at /home/backup/.ssh/authorized_keys:1
+Postponed publickey for backup from 172.28.0.1 port 33224 ssh2 [preauth]
+Accepted key ED25519 SHA256:aI+3MA99qIrEEYeVV8z7gQIGX4tdEt40IUFbr1IdPOc found at /home/backup/.ssh/authorized_keys:1
+Accepted publickey for backup from 172.28.0.1 port 33224 ssh2: ED25519 SHA256:aI+3MA99qIrEEYeVV8z7gQIGX4tdEt40IUFbr1IdPOc
+User child is on pid 32
+Starting session: subsystem 'sftp' for backup from 172.28.0.1 port 33224 id 0
+Received disconnect from 172.28.0.1 port 33224:11: disconnected by user
+Disconnected from user backup 172.28.0.1 port 33224
+2026-11-17 05:43:27 [INFO] [monitor] snapshot monitoring container ditulis ke /home/bimoserver/sysguard-kelompok3/var/log/container-monitor.log
+2026-11-17 05:43:27 [INFO] [monitor] container sysguard-web running (health=healthy)
+2026-11-17 05:43:27 [INFO] [monitor] layanan http://127.0.0.1:8080/ sehat (HTTP 200)
+2026-11-17 05:43:28 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113704KB, dibutuhkan>=56KB
+SERVICE=OK STORAGE=OK
+2026-11-17 05:43:28 [INFO] [monitor] monitoring: semua pemeriksaan LULUS
+[exit status = 0]

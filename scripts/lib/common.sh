@@ -48,6 +48,7 @@ load_config() {
   [[ -f $f ]] || return 0
   while IFS='=' read -r k v; do
     [[ $k =~ ^[A-Z_]+$ ]] || continue
+v=${v%%#*}; v=${v%"${v##*[![:space:]]}"}
     v=${v%\"}; v=${v#\"}
     if [[ -z ${!k+x} ]]; then export "$k=$v"; fi
   done < <(grep -Ev '^[[:space:]]*(#|$)' "$f")

@@ -66,7 +66,7 @@ log INFO "arsip dibuat: $nfiles file, $(du -k "$STAGING_DIR/$name.tar.gz" | cut 
 uploaded=1
 store_put "$STAGING_DIR/$name.tar.gz" "$STAGING_DIR/$name.tar.gz.sha256" "$STAGING_DIR/$name.manifest.sha256" \
   || die "$E_BACKUP_FAIL" "upload ke store gagal"
-store_exec "cd '$STORE_DIR' && sha256sum -c --quiet '$name.tar.gz.sha256'" \
+store_exec "cd '$STORE_DIR' && sha256sum -c '$name.tar.gz.sha256'" \
   || die "$E_BACKUP_FAIL" "verifikasi checksum di store gagal"
 
 # Catatan checksum disimpan juga di host (terpisah dari store) sebagai pembanding saat restore.

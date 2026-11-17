@@ -1,0 +1,9 @@
+# M-03 -- Monitoring
+# Ambang disk diturunkan (MAX_DISK_PCT=1)
+$ env MAX_DISK_PCT=1 /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh monitor
+2026-11-17 05:43:01 [INFO] [monitor] container sysguard-web running (health=starting)
+2026-11-17 05:43:01 [INFO] [monitor] layanan http://127.0.0.1:8080/ sehat (HTTP 200)
+2026-11-17 05:43:02 [INFO] [monitor] storage: terpakai=37% (batas 1%), tersedia=10113948KB, dibutuhkan>=56KB
+2026-11-17 05:43:02 [ERROR] [monitor] penggunaan disk 37% >= batas 1%
+SERVICE=OK STORAGE=FAIL
+[exit status = 11]

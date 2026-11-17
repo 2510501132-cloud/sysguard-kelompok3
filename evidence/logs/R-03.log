@@ -1,0 +1,5 @@
+# R-03 -- Restore
+# Nama backup tidak valid (../../etc)
+$ /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh restore -b ../../etc
+2026-11-17 05:43:14 [ERROR] [restore] nama backup tidak valid: '../../etc'
+[exit status = 2]

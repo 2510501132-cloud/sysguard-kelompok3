@@ -1,0 +1,6 @@
+# C-02 -- Container
+# Tidak privileged & tanpa docker.sock
+$ hardening_test
+sysguard-web Privileged=false Mounts=/home/bimoserver/sysguard-kelompok3/data/www 
+sysguard-store Privileged=false Mounts=/var/lib/docker/volumes/sysguard_backup_data/_data /var/lib/docker/volumes/sysguard_ssh_hostkeys/_data /home/bimoserver/sysguard-kelompok3/secrets/sysguard_backup.pub 
+[exit status = 0]

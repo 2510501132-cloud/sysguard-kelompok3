@@ -1,0 +1,5 @@
+# M-04 -- Monitoring
+# Input tidak valid (MAX_DISK_PCT=abc)
+$ env MAX_DISK_PCT=abc /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh monitor
+2026-11-17 05:43:02 [ERROR] [monitor] MAX_DISK_PCT harus bilangan 1-100 (nilai: 'abc')
+[exit status = 2]

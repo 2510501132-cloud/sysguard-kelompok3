@@ -1,0 +1,16 @@
+# B-01 -- Backup
+# Preflight lulus
+$ /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh backup
+2026-11-17 05:43:03 [INFO] [backup] preflight: menjalankan monitor.sh
+2026-11-17 05:43:03 [INFO] [monitor] container sysguard-web running (health=starting)
+2026-11-17 05:43:03 [INFO] [monitor] layanan http://127.0.0.1:8080/ sehat (HTTP 200)
+2026-11-17 05:43:03 [INFO] [monitor] storage: terpakai=37% (batas 90%), tersedia=10113936KB, dibutuhkan>=56KB
+SERVICE=OK STORAGE=OK
+2026-11-17 05:43:03 [INFO] [monitor] monitoring: semua pemeriksaan LULUS
+2026-11-17 05:43:03 [INFO] [backup] preflight lulus -- backup dilanjutkan
+2026-11-17 05:43:04 [INFO] [backup] membuat arsip backup-20261117-054303 dari /home/bimoserver/sysguard-kelompok3/data/www
+2026-11-17 05:43:04 [INFO] [backup] arsip dibuat: 4 file, 4KB
+backup-20261117-054303.tar.gz: OK
+2026-11-17 05:43:04 [INFO] [backup] BACKUP BERHASIL: backup-20261117-054303 (4 file) tersimpan & terverifikasi di store
+BACKUP_NAME=backup-20261117-054303
+[exit status = 0]

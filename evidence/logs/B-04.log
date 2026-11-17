@@ -1,0 +1,5 @@
+# B-04 -- Backup
+# SOURCE_DIR di luar data/ (/etc)
+$ env SOURCE_DIR=/etc /home/bimoserver/sysguard-kelompok3/scripts/sysguard.sh backup
+2026-11-17 05:43:09 [ERROR] [backup] SOURCE_DIR '/etc' di luar /home/bimoserver/sysguard-kelompok3/data -- ditolak
+[exit status = 32]

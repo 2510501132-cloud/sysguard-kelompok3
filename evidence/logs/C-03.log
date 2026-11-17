@@ -1,0 +1,9 @@
+# C-03 -- Container+Persistensi
+# Container backup-store dibuat ulang
+$ persist_test
+container dibuat ulang; backup sebelum=4 sesudah=4; terbaru=backup-20261117-054316
+2026-11-17 05:43:24 [INFO] [restore] mengambil backup-20261117-054316 dari store
+2026-11-17 05:43:25 [INFO] [restore] checksum archive cocok
+2026-11-17 05:43:25 [INFO] [restore] RESTORE TERVERIFIKASI: 4 file cocok dengan manifest (/home/bimoserver/sysguard-kelompok3/var/restore/backup-20261117-054316)
+RESTORE_VERIFIED name=backup-20261117-054316 files=4 dest=/home/bimoserver/sysguard-kelompok3/var/restore/backup-20261117-054316
+[exit status = 0]
